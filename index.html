@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon.ico" type="/cpu_103435.png">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <title>Encriptador</title>
-    
- 
+  
 </head>
 <body>
         <header>
@@ -27,33 +28,21 @@
           </div>
           <div class="botones">
             <button class="btn_encriptar" type="button" onclick="encriptar()">Encriptar</button>
-          <button class="btn_desencriptar" type="buton" ondblclick="desencriptar()">Desencriptar</button>
+          <button class="btn_desencriptar" type="button" onclick="desencriptar()">Desencriptar</button>
           </div>
 
 
      
         <div class="conversion">
-          <img src="/oracion-san-judas-tadeo-trabajo-y-dinero.jpg" alt="" class="imagen">
+          <img src="/angry_icon-icons.com_67812 - copia.png" alt="" id="imagen" class="imagen">
           <div class="mensaje-encriptado" id="mensaje_encriptado">
             <h2 id="titulo_mensaje">Ningun mensaje encontrado</h2>
             <p id="parrafo">Ingrese el texto que desea encriptar o desencriptar</p>
-            <textarea name="resultado" id="resultado" cols="30" row="10" class="resultado"></textarea>
+            <!--<textarea name="resultado" id="resultado" cols="30" row="10" class="resultado"></textarea>-->
           </div>
         </div>
       </div>
-       <!-- <main>
-                <h1>Encriptadorvisu</h1>
-                
-                <textarea name="textarea" id="textarea"  rows="10" cols="50">Ingrese el texto aqui</textarea>
-                <input type="textarea" name="decifrado" id="decifrado" >
-                <input type="submit" value="encriptar"  class="encriptar" onclick="encriptar()">
-                <input type="submit" value="desencriptar"  class="desencriptar" onclick="desencriptar()">
-                <input type="submit" value="limpiar"  class="limpiar">
-                <input type="submit" value="copiar"  class="copiar">
-       
-                <textarea name="textarea" rows="10" cols="50">Write something here</textarea>
-           
-        </main>-->
+
     
 </body>
 <script src="index.js"></script>
