@@ -112,15 +112,16 @@
     justify-content: center;
     padding: 2%;
     gap:8px;
-    width: 25%;
+    width: 20%;
     background-color: #00081f;
     border-radius: 24px;
     font-family: 'Roboto Slab', serif;
-    font-size: 25px;
+    font-size: 20px;
     line-height: 20px;
     text-align: center;
     color: #8dcad2;
     font-weight: 900;
+    margin-left: 1%;
 }
 
 .btn_desencriptar
@@ -132,17 +133,17 @@
     justify-content: center;
     padding: 2%;
     gap:8px;
-    width: 25%;
+    width: 20%;
     background-color: #8dcad2;
     border:1px solid #00081f ;
     border-radius: 24px;
     font-family: 'Roboto Slab', serif;
     font-weight: 400;
-    font-size: 25px;
+    font-size: 20px;
     line-height: 20px;
     text-align: center;
     color: #00081f;
-    margin-left: 45px;
+    margin-left: 5%;
     font-weight: 900;
     }
 
@@ -155,17 +156,41 @@
         justify-content: center;
         padding: 2%;
         gap:8px;
-        width: 25%;
+        width: 20%;
         background-color: #00081f;
+        border-radius: 24px;
+        font-family: 'Roboto Slab', serif;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 20px;
+        text-align: center;
+        color: #8dcad2;
+        margin-left: 10%;
+        font-weight: 900;
+        
+    }
+
+    .btn_analizar
+    {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 2%;
+        gap:8px;
+        width: 20%;
+        background-color: #8dcad2;
         border-radius: 24px;
         font-family: 'Roboto Slab', serif;
         font-weight: 400;
         font-size: 20px;
         line-height: 20px;
         text-align: center;
-        color: #8dcad2;
-        margin-left: 130px;
+        color:#00081f ;
+        margin-left: 5%;
         font-weight: 900;
+
     }
 
 .btn_encriptar:hover
@@ -181,14 +206,22 @@
     margin: 0.3%;
     width: 24.5%;
     padding: 1.8%;
-    margin-left: 45px;
+    margin-left: 5%;
 }
 .btn_eliminar:hover
 {
     margin: 0.3%;
     width: 24.5%;
     padding: 1.8%;
-    margin-left: 150px;
+    margin-left: 10%;
+}
+
+.btn_analizar:hover
+{
+    margin: 0.3%;
+    width: 24.5%;
+    padding: 1.8%;
+    margin-left: 5%;
 }
 
 
@@ -302,7 +335,6 @@
         left: 10%;
         top: 58%;
     }
-
     .mensaje p 
     {
         font-size: 15px;
@@ -315,24 +347,24 @@
     }
     .btn_encriptar,.btn_desencriptar
     {
-        width: 48%;
+        width: 50%;
         border-radius: 16px;
-        margin-left: 5px;
+        margin-left: 5%;
     }
 
     .btn_encriptar:hover,.btn_desencriptar:hover
     {
         margin: 0.3%;
-        width: 47.5%;
+        width: 48%;
         padding: 1.8%;
     }
 
   
     .btn_eliminar
     {
-        width: 50%;
+        width: 70%;
         border-radius: 16px;
-        margin-left: -240px;
+        margin-left: -260px;
         position:relative;
         top:50px;
         
@@ -340,12 +372,33 @@
 
     .btn_eliminar:hover
     {
-        margin: 0.3%;
-    width: 48%;
-    padding: 1.8%;
-    margin-left: -240px; 
-    position:relative;
+            margin: 0.3%;
+            width: 48%;
+            padding: 1.8%;
+            margin-left: -240px; 
+   
     }
+    .btn_analizar
+    {
+        width: 70%;
+        border-radius: 16px;
+        margin-left: 1%;
+        position:relative;
+        top:50px;
+        
+    }
+
+    .btn_analizar:hover
+    {
+            margin: 0.3%;
+            width: 48%;
+            padding: 1.8%;
+            margin-left: 1%; 
+   
+    }
+
+
+
     .conversion
     {
         width: 80%;
@@ -358,7 +411,12 @@
         width: 100%;
         top: 5%;
     }
-
+.mensaje-encriptado h2
+{
+    position: relative;
+    text-align: center;
+    font-size: 20px;
+}
     .mensaje-encriptado p 
     {
         width:100%;

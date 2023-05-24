@@ -57,34 +57,71 @@ function desencriptar()
  
 function eliminar()
 {
-  var aux = document.createElement("textarea");
-  aux.value = document.getElementById("textarea").value;
-  aux.setAttribute("readonly", "");
-  aux.style.position = "absolute";
-  aux.style.left = "-9999px";
-  document.body.appendChild(aux);
-  aux.select();
-  document.execCommand("copy");
-  document.body.removeChild(aux);
-  document.getElementById("textarea").value = "";
-console.log("se apreto el boton mi papa");
-alert("si que se apreto");
+  var texto=document.getElementById("textarea").value;
+
+  if(texto.length != 0)
+  {
+    var aux = document.createElement("textarea");
+    aux.value = texto;
+    aux.setAttribute("readonly", "");
+    aux.style.position = "absolute";
+    aux.style.left = "-9999px";
+    document.body.appendChild(aux);
+    aux.select();
+    document.execCommand("copy");
+    document.body.removeChild(aux);
+    document.getElementById("textarea").value = "";
+    swal("TEXTO COPIADO","", "success")
+  }else
+  {
+    swal("ERROR", "Debes Ingresar un texto para copiar","error")
+  }
+
+
 }
 
-const copyToClipboard = str => {
-  // PASO 1
-  const el = document.createElement("textarea");
-  // PASO 2
-  el.value = str;
-  el.setAttribute("readonly", "");
-  // PASO 3
-  el.style.position = "absolute";
-  el.style.left = "-9999px";
-  document.body.appendChild(el);
-  // PASO 4
-  el.select();
-  // PASO 5
-  document.execCommand("copy");
-  // PASO 6
-  document.body.removeChild(el);
-};
+
+function analizar()
+{
+  let texto=document.getElementById("textarea").value;
+  let tituloMensaje = document.getElementById("titulo_mensaje");
+  let parrafo = document.getElementById("parrafo");
+  if(texto.length != 0)
+  {
+  
+    if(desencripta(texto)==true)
+    {
+      tituloMensaje.textContent = "El Texto debe Encriptarse";
+      parrafo.textContent="";
+      
+    }else
+    {
+      tituloMensaje.textContent = "El Texto debe Desencriptarse";
+      parrafo.textContent="";
+    }
+    
+  }else
+  {
+    swal("ERROR", "Debes Ingresar un texto para analizar","error")
+  }
+
+}
+
+
+function desencripta(texto)
+{
+  var respuesta=false;
+  let textocifrado=texto
+  .replace(/enter/gi, "e")
+  .replace(/imes/gi, "i")
+  .replace(/ai/gi, "a") 
+  .replace(/ober/gi, "o")
+  .replace(/ufat/gi, "u");
+
+if(textocifrado==texto)
+{
+  respuesta=true;
+}
+
+  return respuesta;
+}
