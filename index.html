@@ -6,8 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="shortcut icon" href="/imagenes/favicon.png">
     <title>Encriptador</title>
   
 </head>
@@ -15,22 +18,24 @@
         <header></header>
         <div class="contenedor">
          <!--<img src="/cpu_103435.png" class="header">--> 
-          <h1 id="titulo">Encriptar</h1>
+         <div class="titulo"> <h1>Encriptar</h1></div>
+         
           <div class="areaencriptar">
             <textarea name="textarea" id="textarea"  class="textarea" cols="30" rows="10" placeholder="Ingrese el texto"></textarea>
           </div>
           <div class="mensaje">
-            <p>Solo letras minusculas y sin acentos.</p>
+            <p>&#9888 Solo letras minusculas y sin acentos.</p>
           </div>
           <div class="botones">
-            <button class="btn_encriptar" type="button" onclick="encriptar()">Encriptar</button>
+          <button class="btn_encriptar" type="button" onclick="encriptar()">Encriptar</button>
           <button class="btn_desencriptar" type="button" onclick="desencriptar()">Desencriptar</button>
+          <button class="btn_eliminar" type="button" onclick="copiareliminar()">Copiar y Eliminar</button>
           </div>
 
 
      
         <div class="conversion">
-          <img src="/angry_icon-icons.com_67812 - copia.png" alt="" id="imagen" class="imagen">
+          <img src="/imagenes/encriptar.png" alt="" id="imagen" class="imagen">
           <div class="mensaje-encriptado" id="mensaje_encriptado">
             <h2 id="titulo_mensaje">Ningun mensaje encontrado</h2>
             <p id="parrafo">Ingrese el texto que desea encriptar o desencriptar</p>
@@ -41,5 +46,9 @@
 
     
 </body>
+<footer>
+  <p>Desarrollado por Daniel Mesa Patiño</p>
+
+</footer>
 <script src="index.js"></script>
 </html>

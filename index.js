@@ -5,7 +5,7 @@ function encriptar()
       let tituloMensaje = document.getElementById("titulo_mensaje");
       let parrafo = document.getElementById("parrafo");
       let imagen = document.getElementById("imagen");
-       
+      var conte;
       let textocifrado=texto
       .replace(/e/gi, "enter")
       .replace(/i/gi, "imes")
@@ -13,19 +13,17 @@ function encriptar()
       .replace(/o/gi, "ober")
       .replace(/u/gi, "ufat");             
   
-
-
       if(texto.length != 0){
       document.getElementById("textarea").value = textocifrado;
-      tituloMensaje.textContent = "Texto encriptado con exito";
+      tituloMensaje.textContent = "Texto Encriptado con Exito";
       parrafo.textContent="";
-      imagen.src ="./armstrong - copia.png";
+      imagen.src ="/imagenes/encriptado.png";
       
     }else{
-        imagen.src ="./armstrong - copia.png";
+        imagen.src ="/imagenes/noencriptado.png";
         tituloMensaje.textContent="Ningun mensaje fue encontrado";
         parrafo.textContent="Ingresa el texto que deseas encriptar o desencriptar";
-        swal("oppps","debes ingrear un texto", "warning");
+        swal("ERROR","Debes Ingresar un Texto", "error");
     }
   }
 
@@ -42,22 +40,18 @@ function desencriptar()
       .replace(/ober/gi, "o")
       .replace(/ufat/gi, "u");
      
-
-
-
-
       if(texto.length != 0){
         document.getElementById("textarea").value = textocifrado;
         tituloMensaje.textContent = "Texto desencriptado con exito";
         parrafo.textContent="";
-        imagen.src ="./armstrong - copia.png";
+        imagen.src ="/imagenes/desencriptar.png";
         
       }else{
-          imagen.src ="/cpu_103435.png";
+          imagen.src ="/imagenes/noencriptado.png";
           tituloMensaje.textContent="Ningun mensaje fue encontrado";
           parrafo.textContent="Ingresa el texto que deseas encriptar o desencriptar";
         
-          swal("oppps","debes ingrear un texto", "warning");
+          swal("ERROR","Debes Ingresar un Texto", "error");
       }
 }
  
