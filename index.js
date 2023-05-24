@@ -61,8 +61,11 @@ function desencriptar() {
         parrafo.textContent = "";
         imagen.src = "imagenes/desencriptar.png";
       } else {
-        swal("ERROR", "NO ES POSIBLE DESENCRIPTAR", "info");
+        swal("NO PUEDE DESENCRIPTARSE", "Porque ya fue desencriptado en su totalidad", "info");
         imagen.src = "imagenes/desencriptar.png";
+        tituloMensaje.textContent = "Ningun mensaje fue encontrado";
+        parrafo.textContent =
+          "Ingresa el texto que deseas Encriptar o Desencriptar";
       }
     } else {
       swal(
@@ -70,8 +73,6 @@ function desencriptar() {
         "PORQUE SOLO HAY LETRAS CONSONANTES",
         "error"
       );
-    }
-    {
     }
   } else {
     imagen.src = "imagenes/noencriptado.png";
