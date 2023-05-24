@@ -5,7 +5,8 @@ function encriptar()
       let tituloMensaje = document.getElementById("titulo_mensaje");
       let parrafo = document.getElementById("parrafo");
       let imagen = document.getElementById("imagen");
-      var conte;
+      
+      if(contarvocales(texto)!=0){
       let textocifrado=texto
       .replace(/e/gi, "enter")
       .replace(/i/gi, "imes")
@@ -15,15 +16,17 @@ function encriptar()
   
       if(texto.length != 0){
       document.getElementById("textarea").value = textocifrado;
-      tituloMensaje.textContent = "Texto Encriptado con Exito";
+      tituloMensaje.textContent = "Texto Encriptado con Éxito";
       parrafo.textContent="";
       imagen.src ="imagenes/encriptado.png";
       
     }else{
         imagen.src ="imagenes/noencriptado.png";
-        tituloMensaje.textContent="Ningun mensaje fue encontrado";
+        tituloMensaje.textContent="Ningun mensaje fue Encontrado";
         parrafo.textContent="Ingresa el texto que deseas Encriptar o Desencriptar";
         swal("ERROR","Debes Ingresar un Texto", "error");
+    }}else{
+      swal("NO ES POSIBLE ENCRIPTAR","", "error");
     }
   }
 
@@ -33,6 +36,10 @@ function desencriptar()
     let tituloMensaje = document.getElementById("titulo_mensaje");
     let parrafo = document.getElementById("parrafo");
     let imagen = document.getElementById("imagen");
+
+
+  if(contarvocales(texto)!=0){
+
     let textocifrado=texto
       .replace(/enter/gi, "e")
       .replace(/imes/gi, "i")
@@ -40,22 +47,36 @@ function desencriptar()
       .replace(/ober/gi, "o")
       .replace(/ufat/gi, "u");
      
+      
       if(texto.length != 0){
+
+        if(desencripta(texto)!=true){
         document.getElementById("textarea").value = textocifrado;
-        tituloMensaje.textContent = "Texto desencriptado con exito";
+        tituloMensaje.textContent = "Texto Desencriptado con Éxito";
         parrafo.textContent="";
         imagen.src ="imagenes/desencriptar.png";
+        }else{
+          swal("ERROR","NO ES POSIBLE DESENCRIPTAR", "info");
+          imagen.src ="imagenes/desencriptar.png";
+        }
       
       }else{
           imagen.src ="imagenes/noencriptado.png";
           tituloMensaje.textContent="Ningun mensaje fue encontrado";
-          parrafo.textContent="Ingresa el texto que deseas Encriptar o Eesencriptar";
+          parrafo.textContent="Ingresa el texto que deseas Encriptar o Desencriptar";
         
           swal("ERROR","Debes Ingresar un Texto", "error");
       }
+      {
+
+      }
+    }else{
+
+      swal("NO ES POSIBLE DESENCRIPTAR","", "error");
+    }
 }
  
-function eliminar()
+function copiar()
 {
   var texto=document.getElementById("textarea").value;
 
@@ -88,23 +109,31 @@ function analizar()
   let tituloMensaje = document.getElementById("titulo_mensaje");
   let parrafo = document.getElementById("parrafo");
   let imagen = document.getElementById("imagen");
+
+
+  
   if(texto.length != 0)
   {
-  
+    if(contarvocales(texto) != 0){
     if(desencripta(texto)==true)
     {
       tituloMensaje.textContent = "El Texto debe Encriptarse";
       parrafo.textContent="";
-      
+      imagen.src ="imagenes/analizar.png";
     }else
     {
       tituloMensaje.textContent = "El Texto debe Desencriptarse";
       parrafo.textContent="";
+      imagen.src ="imagenes/analizar.png";
     }
     
   }else
   {
-    swal("ERROR", "Debes Ingresar un texto para analizar","error")
+    swal("NO ES POSIBLE ANALIZAR","", "error");
+    
+  }}else{
+
+    swal("ERROR", "Debes Ingresar un texto para Analizar","error");
   }
 
 }
@@ -126,4 +155,22 @@ if(textocifrado==texto)
 }
 
   return respuesta;
+}
+
+
+
+
+function contarvocales(texto)
+{
+  const vocales = "aeiou";
+  let cantidadVocales = 0;
+
+  for(const letra of texto)
+  {
+    if(vocales.includes(letra.toLowerCase()))
+    {
+      cantidadVocales++;
+    }  
+  }
+  return cantidadVocales;
 }
