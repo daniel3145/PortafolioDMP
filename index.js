@@ -45,7 +45,7 @@ function desencriptar()
         tituloMensaje.textContent = "Texto desencriptado con exito";
         parrafo.textContent="";
         imagen.src ="/imagenes/desencriptar.png";
-        
+      
       }else{
           imagen.src ="/imagenes/noencriptado.png";
           tituloMensaje.textContent="Ningun mensaje fue encontrado";
@@ -55,4 +55,36 @@ function desencriptar()
       }
 }
  
+function eliminar()
+{
+  var aux = document.createElement("textarea");
+  aux.value = document.getElementById("textarea").value;
+  aux.setAttribute("readonly", "");
+  aux.style.position = "absolute";
+  aux.style.left = "-9999px";
+  document.body.appendChild(aux);
+  aux.select();
+  document.execCommand("copy");
+  document.body.removeChild(aux);
+  document.getElementById("textarea").value = "";
+console.log("se apreto el boton mi papa");
+alert("si que se apreto");
+}
 
+const copyToClipboard = str => {
+  // PASO 1
+  const el = document.createElement("textarea");
+  // PASO 2
+  el.value = str;
+  el.setAttribute("readonly", "");
+  // PASO 3
+  el.style.position = "absolute";
+  el.style.left = "-9999px";
+  document.body.appendChild(el);
+  // PASO 4
+  el.select();
+  // PASO 5
+  document.execCommand("copy");
+  // PASO 6
+  document.body.removeChild(el);
+};
