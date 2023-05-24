@@ -17,12 +17,12 @@ function encriptar()
       document.getElementById("textarea").value = textocifrado;
       tituloMensaje.textContent = "Texto Encriptado con Exito";
       parrafo.textContent="";
-      imagen.src ="/imagenes/encriptado.png";
+      imagen.src ="imagenes/encriptado.png";
       
     }else{
-        imagen.src ="/imagenes/noencriptado.png";
+        imagen.src ="imagenes/noencriptado.png";
         tituloMensaje.textContent="Ningun mensaje fue encontrado";
-        parrafo.textContent="Ingresa el texto que deseas encriptar o desencriptar";
+        parrafo.textContent="Ingresa el texto que deseas Encriptar o Desencriptar";
         swal("ERROR","Debes Ingresar un Texto", "error");
     }
   }
@@ -44,12 +44,12 @@ function desencriptar()
         document.getElementById("textarea").value = textocifrado;
         tituloMensaje.textContent = "Texto desencriptado con exito";
         parrafo.textContent="";
-        imagen.src ="/imagenes/desencriptar.png";
+        imagen.src ="imagenes/desencriptar.png";
       
       }else{
-          imagen.src ="/imagenes/noencriptado.png";
+          imagen.src ="imagenes/noencriptado.png";
           tituloMensaje.textContent="Ningun mensaje fue encontrado";
-          parrafo.textContent="Ingresa el texto que deseas encriptar o desencriptar";
+          parrafo.textContent="Ingresa el texto que deseas Encriptar o Eesencriptar";
         
           swal("ERROR","Debes Ingresar un Texto", "error");
       }
@@ -74,7 +74,8 @@ function eliminar()
     swal("TEXTO COPIADO","", "success")
   }else
   {
-    swal("ERROR", "Debes Ingresar un texto para copiar","error")
+    swal("ERROR", "Debes Ingresar un texto para copiar","error");
+    imagen.src ="imagenes/noencriptado.png";
   }
 
 
@@ -86,6 +87,7 @@ function analizar()
   let texto=document.getElementById("textarea").value;
   let tituloMensaje = document.getElementById("titulo_mensaje");
   let parrafo = document.getElementById("parrafo");
+  let imagen = document.getElementById("imagen");
   if(texto.length != 0)
   {
   
